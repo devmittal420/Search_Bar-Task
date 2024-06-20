@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        h1{
+            font-size: 3rem;
+        }
+
+        #input_text{
+            border-radius: 2rem;
+            border-width: 10px;
+            font-size: 20px;
+            
+        }
+        li{
+        display: block;
+        width: 50%;
+        border: 1px solid silver;
+        padding: 12px;
+        background-color: whitesmoke;
+        list-style: none;
+        }
+        #name_list{
+            padding: 0;
+        }
+
+        a:hover:not(.header){
+            background-color: aqua;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>Names List</h1>
+    <input type="text" id="input_text" onkeyup="searchNumber()" placeholder="Search for names.."      >
+    <ul id="name_list">
+        <li>Akash</li>
+        <li>Ankit</li>
+        <li>Ayush</li>
+        <li>Dev</li>
+        <li>Harsh</li>
+        <li>Indra</li>
+        <li>Rudra</li>
+        <li>Shivham</li>
+    </ul>
+
+</body>
+
+<script>
+
+    function searchNumber(){
+        let input = document.getElementById("input_text").value.toLowerCase();
+        let input2 = document.getElementsByTagName("li");
+
+        for (let i = 0; i < input2.length; i++) {
+
+            let list_number = input2[i].innerHTML.toLowerCase();
+
+            if(!list_number.includes(input))
+            {
+                input2[i].style.display = "none";
+            }
+            else{
+                input2[i].style.display = "list-item";
+            }
+        }
+    }
+
+    </script>
+</html>
